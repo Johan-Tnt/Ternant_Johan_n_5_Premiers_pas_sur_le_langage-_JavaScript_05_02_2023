@@ -17,19 +17,35 @@ const slides = [
     tagLine: "Autocollants <span>avec découpe laser sur mesure</span>",
   },
 ];
-/*Ajout de code Johan*/
+/*Rajout de code pour vérifier le fonctionnement dans l'inspecteur ci-dessous*/
+console.log(slides);
+
+/*Ajout de code Johan*/ /*Carroussel*/
+/**Global **/
+const dots = document.querySelector(".dots");
+let index = 0;
+const arrow_right = document.querySelector(".arrow_right");
+const img = document.querySelector("#banner .banner-img");
+console.log(img);
+const text = document.querySelector("#banner p");
+console.log(text);
+
 /*Ajout de event listenner arrow left*/
 arrow_left.addEventListener("click", () => {
   console.log("Vous avez cliqué sur le bouton gauche");
 });
-/*Ajout de event listenner arrow right*/
-arrow_right.addEventListener("click", () => {
-  console.log("Vous avez cliqué sur le bouton droit");
-});
 
-/**Global **/
-const dots = document.querySelector(".dots");
-let index = 0;
+/*Ajout de event listenner arrow right*/
+function clickRight() {
+  arrow_right.addEventListener("click", () => {
+    console.log("Vous avez cliqué sur le bouton droit");
+    index++;
+    console.log(img);
+    img.src = `./assets/images/slideshow/${slides[index].image}`;
+    text.innerHTML = `${slides[index].tagLine}`;
+  });
+}
+clickRight();
 
 /*Ajout des bullet point*/
 function displayDots() {
@@ -43,5 +59,4 @@ function displayDots() {
   }
 }
 displayDots();
-
-/*Ajout du carroussel*/
+/*Fin du code Johan*/
