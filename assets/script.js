@@ -21,7 +21,7 @@ const slides = [
 console.log(slides);
 
 /*Ajout de code Johan*/ /*Carroussel*/
-/**Global **/
+/**Global**/
 const dots = document.querySelector(".dots");
 let index = 0;
 const arrow_right = document.querySelector(".arrow_right");
@@ -35,6 +35,10 @@ console.log(text);
 function clickLeft() {
   arrow_left.addEventListener("click", () => {
     console.log("Vous avez cliqué sur le bouton gauche");
+    /*Ajout changement de bullet point actif ci-dessous + vers l'arrière*/
+    const arrayDots = document.querySelectorAll(".dots .dot");
+    arrayDots[index].classList.remove("dot_selected");
+    /*Ajout défilement infini ci-dessous + img + texte*/
     index--;
     if (index < 0) {
       index = slides.length - 1;
@@ -42,6 +46,9 @@ function clickLeft() {
     console.log(img);
     img.src = `./assets/images/slideshow/${slides[index].image}`;
     text.innerHTML = `${slides[index].tagLine}`;
+    /*Bullet point actif vers l'avant ci-dessous*/
+    arrayDots[index].classList.add("dot_selected");
+    console.log(arrayDots);
   });
 }
 clickLeft();
@@ -50,6 +57,8 @@ clickLeft();
 function clickRight() {
   arrow_right.addEventListener("click", () => {
     console.log("Vous avez cliqué sur le bouton droit");
+    const arrayDots = document.querySelectorAll(".dots .dot");
+    arrayDots[index].classList.remove("dot_selected");
     index++;
     if (index > slides.length - 1) {
       index = 0;
@@ -57,9 +66,12 @@ function clickRight() {
     console.log(img);
     img.src = `./assets/images/slideshow/${slides[index].image}`;
     text.innerHTML = `${slides[index].tagLine}`;
+    arrayDots[index].classList.add("dot_selected");
+    console.log(arrayDots);
   });
 }
 clickRight();
+
 /*Ajout des bullet point*/
 function displayDots() {
   for (let i = 0; i < slides.length; i++) {
