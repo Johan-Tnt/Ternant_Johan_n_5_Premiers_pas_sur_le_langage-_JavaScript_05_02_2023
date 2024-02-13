@@ -20,7 +20,7 @@ const slides = [
 /*Rajout de code pour vérifier le fonctionnement dans l'inspecteur ci-dessous*/
 console.log(slides);
 
-/*Ajout de code Johan*/ /*Carroussel*/
+/*Ajout de code Johan*/ /*Carrousel*/
 /**Global**/
 const dots = document.querySelector(".dots");
 let index = 0;
@@ -31,7 +31,7 @@ console.log(img);
 const text = document.querySelector("#banner p");
 console.log(text);
 
-/*Ajout de event listenner arrow left*/
+/*Ajout de navigation arrow left*/
 function clickLeft() {
   arrow_left.addEventListener("click", () => {
     console.log("Vous avez cliqué sur le bouton gauche");
@@ -53,7 +53,7 @@ function clickLeft() {
 }
 clickLeft();
 
-/*Ajout de event listenner arrow right*/
+/*Ajout de navigation arrow right*/
 function clickRight() {
   arrow_right.addEventListener("click", () => {
     console.log("Vous avez cliqué sur le bouton droit");
@@ -72,7 +72,7 @@ function clickRight() {
 }
 clickRight();
 
-/*Ajout des bullet point*/
+/*Ajout des bullet points*/
 function displayDots() {
   for (let i = 0; i < slides.length; i++) {
     const dot = document.createElement("div");
