@@ -25,15 +25,23 @@ console.log(slides);
 const dots = document.querySelector(".dots");
 let index = 0;
 const arrow_right = document.querySelector(".arrow_right");
+const arrow_left = document.querySelector(".arrow_left");
 const img = document.querySelector("#banner .banner-img");
 console.log(img);
 const text = document.querySelector("#banner p");
 console.log(text);
 
 /*Ajout de event listenner arrow left*/
-arrow_left.addEventListener("click", () => {
-  console.log("Vous avez cliqué sur le bouton gauche");
-});
+function clickLeft() {
+  arrow_left.addEventListener("click", () => {
+    console.log("Vous avez cliqué sur le bouton gauche");
+    index--;
+    console.log(img);
+    img.src = `./assets/images/slideshow/${slides[index].image}`;
+    text.innerHTML = `${slides[index].tagLine}`;
+  });
+}
+clickLeft();
 
 /*Ajout de event listenner arrow right*/
 function clickRight() {
