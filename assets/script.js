@@ -36,6 +36,9 @@ function clickLeft() {
   arrow_left.addEventListener("click", () => {
     console.log("Vous avez cliqué sur le bouton gauche");
     index--;
+    if (index < 0) {
+      index = slides.length - 1;
+    }
     console.log(img);
     img.src = `./assets/images/slideshow/${slides[index].image}`;
     text.innerHTML = `${slides[index].tagLine}`;
@@ -48,13 +51,15 @@ function clickRight() {
   arrow_right.addEventListener("click", () => {
     console.log("Vous avez cliqué sur le bouton droit");
     index++;
+    if (index > slides.length - 1) {
+      index = 0;
+    }
     console.log(img);
     img.src = `./assets/images/slideshow/${slides[index].image}`;
     text.innerHTML = `${slides[index].tagLine}`;
   });
 }
 clickRight();
-
 /*Ajout des bullet point*/
 function displayDots() {
   for (let i = 0; i < slides.length; i++) {
