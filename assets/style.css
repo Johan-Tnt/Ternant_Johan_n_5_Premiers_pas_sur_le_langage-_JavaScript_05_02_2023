@@ -209,12 +209,14 @@ header {
 }
 #banner .arrow_left {
   left: 10px;
+  /*Ajout de code Johan*/
   position: absolute;
   background: transparent;
   border: none;
 }
 #banner .arrow_right {
   right: 10px;
+  /*Ajout de code Johan*/
   position: absolute;
   background: transparent;
   border: none;
